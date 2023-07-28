@@ -1,3 +1,7 @@
+[includeIf "gitdir:~/github/school/**"]
+	path="~/.gitconfig-school"
+[includeIf "gitdir:~/github/personal/**"]
+	path="~/.gitconfig-personal"
 [credential]
 	helper = cache --timeout=86400
 [alias]

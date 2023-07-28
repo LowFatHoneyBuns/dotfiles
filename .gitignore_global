@@ -10,6 +10,7 @@
 # IntelliJ Editor Project Files
 *.iml
 .idea/
+.idea/*
 
 # VSCode Editor Project Files
 .vscode/
@@ -25,3 +26,27 @@ __*
 # Gnome file manager
 .cache
 .thumbs
+
+# Files
+*.user
+*.suo
+*.pyc
+*.asc
+*.md5
+*.sha1
+*.tst.ps1
+*.iml
+*.ipr
+*.iws
+
+#Dirs
+__pycache__/*
+_ReSharper.*
+bin/
+obj/
+deploy/Output/*
+out/
+output/
+logs/
+dist/
+*.egg-info/

@@ -1,30 +1,21 @@
-export ADOTDIR=$HOME/.local/share/antigen
-source "${HOME}/.local/share/antigen.zsh"
+#Setup antidote 
+export ADOTDIR=$HOME/.local/share/antidote
+autoload -Uz compinit && compinit
 
-# Select theme
-#antigen theme denysdovhan/spaceship-prompt
+source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
 
-# Load the oh-my-zsh library
-antigen use oh-my-zsh
-# Install oh-my-zsh plugins
-antigen bundle colored-man-pages
-antigen bundle command-not-found
-antigen bundle docker
-antigen bundle docker-compose
-antigen bundle gitfast
-# antigen bundle kubectl
-antigen bundle pip
-antigen bundle ripgrep
+ZSH=$(antidote path ohmyzsh/ohmyzsh)
+ZSH_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/oh-my-zsh"
+[[ -d $ZSH_CACHE_DIR ]] || mkdir -p $ZSH_CACHE_DIR
 
-antigen bundle zsh-users/zsh-history-substring-search #./zsh-history-substring-search.zsh
-antigen bundle zsh-users/zsh-autosuggestions #./zsh-autosuggestions.zsh
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle gesquive/zsh-completions
-
-antigen apply
+antidote load 
 
 setopt HIST_IGNORE_SPACE
+
+# Setup pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # remove all the crappy oh-my-zsh aliases
 unalias -a
@@ -46,3 +37,4 @@ fi
 if command -v starship >/dev/null; then
     eval "$(starship init zsh)"
 fi
+

@@ -58,6 +58,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Startship 
 if command -v starship >/dev/null; then
     eval "$(starship init bash)"
 fi
+
+# pyenv setup
+export PYENV_ROOT="$HOME/.pyenv"
+if command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"; then
+    eval "$(pyenv init -)"
+fi
+

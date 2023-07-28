@@ -53,9 +53,9 @@ fi
 
 info "repo: ${REPO}"
 if [ -z "${REPO}" ]; then
-    REPO=https://github.com/gesquive/dotfiles.git
+    REPO=https://github.com/LowFatHoneyBuns/dotfiles.git
     if ssh -q git@github.com; [ $? -eq 1 ]; then
-        REPO=git@github.com:gesquive/dotfiles.git
+        REPO=git@github.com:LowFatHoneyBuns/dotfiles.git
     fi
 fi
 

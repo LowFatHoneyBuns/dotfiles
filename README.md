@@ -5,5 +5,5 @@ These dotfiles have been tested in Nix and OSX. If you want to try them, I would
 ### Install
 To install, download and run.
 ```
-sh -c "$(wget https://raw.githubusercontent.com/gesquive/dotfiles/main/.local/bin/bootstrap_dotfiles.sh -O -)"
+sh -c "$(wget https://raw.githubusercontent.com/LowFatHoneyBuns/dotfiles/main/.local/bin/bootstrap_dotfiles.sh -O -)"
 ```

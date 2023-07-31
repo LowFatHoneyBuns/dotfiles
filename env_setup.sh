@@ -30,15 +30,26 @@ has() {
 case "$OSTYPE" in
     darwin*)  
         echo "OSX"
+        #Install HomeBrew
         if ! has brew; then
             warn "HomeBrew not installed"
             /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-            
         fi
+        #Install Pipx
         if ! has pipx; then
             warn "pipx not installed"
             brew install pipx
         fi
+        #Install Nerd Fonts
+            brew tap homebrew/cask-fonts &&
+            brew install --cask font-hack-nerd-font
+        #Install Starship
+        if ! has starship; then
+            warn "starship not installed"
+            brew install starship
+        fi
+   
+        #Install Pyenv
         if ! has pyenv; then
             warn "pyenv not installed"
             git clone https://github.com/pyenv/pyenv.git ~/.pyenv
@@ -62,6 +73,9 @@ case "$OSTYPE" in
             git clone https://github.com/pyenv/pyenv.git ~/.pyenv
             sudo apt update && sudo apt install build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
         fi
+        mkdir -p ~/.local/share/fonts
+        cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/Hack/HackNerdFont-Regular.ttf
+
         echo "all good"
     ;;
     msys*)

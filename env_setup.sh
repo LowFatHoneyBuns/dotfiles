@@ -74,7 +74,7 @@ case "$OSTYPE" in
             sudo apt update && sudo apt install build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
         fi
         mkdir -p ~/.local/share/fonts
-        cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/Hack/HackNerdFont-Regular.ttf
+        cd ~/.local/share/fonts && curl -fLO https://github.com/ryanoasis/nerd-fonts/raw/HEAD/patched-fonts/Hack//Regular/HackNerdFont-Regular.ttf
 
         echo "all good"
     ;;

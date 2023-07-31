@@ -58,7 +58,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Startship 
+# Starship 
 if command -v starship >/dev/null; then
     eval "$(starship init bash)"
 fi
